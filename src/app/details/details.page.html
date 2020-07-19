@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{booking.bookingID}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+  <ion-item>
+   <div class="col">
+     <div class="row">
+      <h6>Cliente</h6>
+      
+     </div>
+     <div class="row">
+      <h4 style="font-weight: 300;">{{booking.cliente}}</h4>
+     </div>
+   </div>
+  </ion-item>
+
+  <ion-item>
+    <div class="col">
+      <div class="row">
+       <h6>Fecha</h6>
+       
+      </div>
+      <div class="row">
+       <h4 style="font-weight: 300;"> {{booking.fecha_creacion.toDateString()}}</h4>
+      </div>
+    </div>
+   </ion-item>
+   <ion-item>
+    <div class="col">
+      <div class="row">
+       <h6>Dirección</h6>
+       
+      </div>
+      <div class="row">
+       <h4 style="font-weight: 300">{{booking.direccion}}</h4>
+      </div>
+    </div>
+   </ion-item>
+
+   <ion-item>
+    <div class="col">
+      <div class="row">
+       <h6>Precio</h6>
+       
+      </div>
+      <div class="row">
+       <h4 style="font-weight: 300;">{{booking.precio | currency:'USD':'symbol':'1.0'}}</h4>
+      </div>
+    </div>
+   </ion-item>
+</ion-list>
+</ion-content>

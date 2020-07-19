@@ -9,13 +9,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  error="";
+  constructor(public api: ApiBookingsService, private router: Router) {
+  
 
-  constructor(public api: ApiBookingsService, private router: Router) {}
+  }
 
   ngOnInit(): void {
     let token = localStorage.getItem('token');
 
-    if (token != null) {
+    if (token.toString() !== "null") {
       this.router.navigate(['home']);
     }
   }
@@ -45,7 +48,8 @@ export class LoginPage implements OnInit {
     if(email!="" && password!="" && app!=""){
       this.validarUser(email, password, app);
     }else{
-
+      this.error="Error, los datos en el formulario no son correctos"
+      
     }
   
   }

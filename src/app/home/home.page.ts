@@ -22,13 +22,16 @@ export class HomePage {
     //Si el usuario inició sesión, se obtienen los bookings, de lo contrario se redirige al inicio de sesión
     let token = localStorage.getItem("token");
 
-    if (token == null) {
+    if (token.toString() == "null") {
       this.router.navigate(["login"]);
     } else {
       this.getBookings();
     }
   }
-
+  salir(){
+    localStorage.setItem("token", null)
+    this.router.navigate(['login']);
+  }
   details(index) {
     localStorage.setItem(
       "booking",

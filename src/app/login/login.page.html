@@ -6,6 +6,9 @@
 
 <ion-content>
   <form (ngSubmit)="logForm()" style="margin: 1em;">
+    <div *ngIf="error!=''" class="alert alert-danger" role="alert">
+      {{error}}
+     </div>
     <ion-item>
       <ion-label position="floating">Email</ion-label>
       <ion-input type="email" [(ngModel)]="todo.email" name="email" required ></ion-input>
